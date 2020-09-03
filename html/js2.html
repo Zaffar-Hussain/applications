@@ -1,0 +1,41 @@
+<html>
+<head>
+<script type="text/javascript">
+	var message="Error";
+function checkdata(val)
+{
+	var len=val.length;
+	
+	if(len>=0 && len<=4)
+		message="<font color=red size=4>weak</font>";
+	else if(len>4 && len<=8)
+		message="<font color=blue size=4>medium</font>";
+	else
+		message="<font color=green size=4>strong</font>";
+	document.getElementById("span1").innerHTML=message;
+}
+function confirmpwd(val)
+{
+	var pwd=document.getElementById("pwd").value;
+	alert(";"+pwd+":"+val+":");
+	if(pwd=val)
+		document.getElementById("span1").innerHTML="<font color=red size=4>Password Missmatch</font>";
+	else
+}
+
+
+</script>
+
+
+</head>
+	<body>
+		
+		<form name=reg method=get action="">
+			Username <input type=text size=10 placeholder="enter name" name="un"><br><br>
+			password <input type=password size=10 placeholder="enter pwd" name="pwd" onkeyup="checkdata(this.value)"><br>
+<span id="span1"></span><br>
+
+			confirm password <input type=password size=10 placeholder="confirm pwd" name="cp"><br>
+		</form>
+	</body>
+</html>
